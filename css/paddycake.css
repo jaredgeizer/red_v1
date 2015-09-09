@@ -1,0 +1,113 @@
+html{}
+
+body{
+    margin: 0;
+    background-color: #F54238;
+    font-family: 'Geosans Light',sans-serif;
+    color: #fff;
+}
+.wrapper{
+    width: 60%;
+    height: 500px;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    top: 240px;
+    max-width: 680px;
+}
+
+.alpha{
+    position: relative;
+    width: 30%;
+    left: 50%;
+    margin-left: -15%;
+    
+}
+.burrito{
+    position: relative;
+    width: 70vw;
+    display: flex;
+    top: 70px;
+}
+.menu{
+    display: flex;
+    width: 60vw;
+    justify-content: space-around;
+    max-width: 680px;
+}
+h2{
+    margin: 0;
+    position: relative;
+    border-style: solid;
+    border-width: 10px;
+    display: inline;
+    text-align: center;
+    font-size: 3.4em;
+    font-weight: normal;
+    max-width: 254px;
+    transform: scale(1);
+    transition: all .4s;
+}
+a{
+    padding: 18px 70px 19px 70px;
+    color: #fff;
+    text-decoration: none;
+    height: 80px;
+    line-height: 80px;
+}
+h2:hover{
+    background-color:  #D53531; 
+    transition: all .4s;
+    transform: scale(1.03);
+    z-index: 11;
+}
+.gear{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    
+}
+.beta{
+    width: 100px;
+    transform: scale(1);
+    transition: all .4s;
+}
+.beta:hover{
+    transition: all .4s;
+    transform: scale(1.06);
+    z-index: 11;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+font-family: 'Exo 2', sans-serif;
+font-family: 'Oxygen', sans-serif;
+font-family: 'Titillium Web', sans-serif;
+font-family: 'Geosans Light', sans-serif;
+font-family: 'Bitter', serif;
+
+
+red
+#F54238
+darker red
+#D53531
