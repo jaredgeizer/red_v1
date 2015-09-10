@@ -17,8 +17,9 @@ body{
 }
 
 .alpha{
-    position: relative;
+    position: absolute;
     width: 30%;
+    max-width: 180px;
     left: 50%;
     margin-left: -15%;
     
@@ -27,35 +28,45 @@ body{
     position: relative;
     width: 70vw;
     display: flex;
-    top: 70px;
+    top: 300px;
 }
-.menu{
+.book{
     display: flex;
     width: 60vw;
     justify-content: space-around;
     max-width: 680px;
+
 }
-h2{
+.page{
+    border-width: 10px;
     margin: 0;
     position: relative;
     border-style: solid;
-    border-width: 10px;
     display: inline;
     text-align: center;
-    font-size: 3.4em;
     font-weight: normal;
-    max-width: 254px;
     transform: scale(1);
     transition: all .4s;
+    flex-grow: 1;
+    
+}
+.space{
+    flex-grow: 1;
+    max-width: 80px;
+}
+h2{
+    font-size: 3.4em;
+    margin: 0;
+    text-align: center;
+    font-weight: normal;
 }
 a{
-    padding: 18px 70px 19px 70px;
     color: #fff;
     text-decoration: none;
     height: 80px;
     line-height: 80px;
 }
-h2:hover{
+.page:hover{
     background-color:  #D53531; 
     transition: all .4s;
     transform: scale(1.03);
@@ -66,7 +77,7 @@ h2:hover{
     flex-direction: column;
     justify-content: center;
     height: auto;
-    
+    margin-left: 3%;
 }
 .beta{
     width: 100px;
@@ -79,11 +90,69 @@ h2:hover{
     z-index: 11;
 }
 
+header{
+    width: 70vw;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    margin: 0 auto;
+    margin-left: -35vw;
+    top: 15px;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    max-width: 1000px;
+}
+.delta{
+    position: relative;
+    width: 15%;
+    height: inherit;
+    max-width: 90px;
+    
+    
+}
+.tortilla{
+    position: relative;
+    top: 10px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+.menu > h2{
+    border-width: 8px;
+    font-size: 2em;
+    max-width: 200px;
+    margin-right: 13px;
+    transition: all .4s;
+}
+.menu > h2 > a{
+    padding: 1px 50px 1px 50px;
+}
+.connect{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80px;
+}
+.omega{
+    transform: scale(1);
+    transition: all .4s;
+    width: 50px;
+}
+.omega:hover{
+    transition: all .4s;
+    transform: scale(1.06);
+    z-index: 11;   
+}
 
 
+@media screen and (min-width: 1400px) {
 
-
-
+    header{
+        margin-left: -500px;
+        width: 1000px;
+    }
+}
 
 
 
