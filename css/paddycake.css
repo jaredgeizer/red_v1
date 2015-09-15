@@ -6,6 +6,7 @@ body{
     font-family: 'Geosans Light',sans-serif;
     color: #fff;
 }
+
 .wrapper{
     width: 60%;
     height: 500px;
@@ -24,38 +25,46 @@ body{
     margin-left: -15%;
     
 }
+
 .burrito{
     position: relative;
     width: 70vw;
     display: flex;
     top: 300px;
+    max-height: 100px;
 }
-.book{
+.chicken{
     display: flex;
     width: 60vw;
     justify-content: space-around;
     max-width: 680px;
-
+    font-size: 3em;
 }
-.page{
+.lettuce{
     border-width: 10px;
     margin: 0;
-    position: relative;
     border-style: solid;
-    display: inline;
     text-align: center;
     font-weight: normal;
     transform: scale(1);
     transition: all .4s;
     flex-grow: 1;
+    min-width: 160px;
     
+}
+.lettuce:hover{
+    background-color:  #D53531; 
+    transition: all .4s;
+    transform: scale(1.03);
+    z-index: 11;
 }
 .space{
     flex-grow: 1;
     max-width: 80px;
+    min-width: 40px;
 }
 h2{
-    font-size: 3.4em;
+    
     margin: 0;
     text-align: center;
     font-weight: normal;
@@ -63,15 +72,8 @@ h2{
 a{
     color: #fff;
     text-decoration: none;
-    height: 80px;
-    line-height: 80px;
 }
-.page:hover{
-    background-color:  #D53531; 
-    transition: all .4s;
-    transform: scale(1.03);
-    z-index: 11;
-}
+
 .gear{
     display: flex;
     flex-direction: column;
@@ -84,11 +86,34 @@ a{
     transform: scale(1);
     transition: all .4s;
 }
+.contact{
+    display: none;
+    position: relative;
+    
+}
 .beta:hover{
     transition: all .4s;
     transform: scale(1.06);
     z-index: 11;
 }
+.beta:hover + .contact{
+    display: inline;
+    left: 20px;
+}
+
+.behance{
+    top: -99px;
+}
+.linkedin{
+    top: -195px;
+}
+.mail{
+    
+}
+
+
+
+
 
 header{
     width: 70vw;
@@ -103,36 +128,35 @@ header{
     flex-direction: row;
     max-width: 1000px;
 }
+
 .delta{
     position: relative;
     width: 15%;
     height: inherit;
     max-width: 90px;
-    
-    
 }
+
 .tortilla{
     position: relative;
     top: 10px;
     flex-grow: 1;
     display: flex;
     justify-content: flex-end;
+    max-height: 65px;
 }
-.menu > h2{
-    border-width: 8px;
-    font-size: 2em;
-    max-width: 200px;
-    margin-right: 13px;
-    transition: all .4s;
+.beef{
+    display: flex;
+    font-size: 1.6em;
+    align-items: baseline;
 }
-.menu > h2 > a{
+.beef > h2 > a{
     padding: 1px 50px 1px 50px;
 }
 .connect{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 80px;
+    margin-left: 30px;
 }
 .omega{
     transform: scale(1);
@@ -144,6 +168,20 @@ header{
     transform: scale(1.06);
     z-index: 11;   
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media screen and (min-width: 1400px) {
