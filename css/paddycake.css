@@ -11,10 +11,10 @@ body{
     width: 60%;
     height: 500px;
     position: relative;
-    display: block;
     margin: 0 auto;
     top: 240px;
     max-width: 680px;
+    display: flex;
 }
 
 .alpha{
@@ -28,7 +28,7 @@ body{
 
 .burrito{
     position: relative;
-    width: 70vw;
+    
     display: flex;
     top: 300px;
     max-height: 100px;
@@ -36,9 +36,10 @@ body{
 .chicken{
     display: flex;
     width: 60vw;
-    justify-content: space-around;
+    justify-content: space-between;
     max-width: 680px;
     font-size: 3em;
+    margin-right: 40px;
 }
 .lettuce{
     border-width: 10px;
@@ -60,8 +61,8 @@ body{
 }
 .space{
     flex-grow: 1;
-    max-width: 80px;
     min-width: 40px;
+    max-width: 100px;
 }
 h2{
     
@@ -74,17 +75,12 @@ a{
     text-decoration: none;
 }
 
-.gear{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: auto;
-    margin-left: 3%;
-}
 .beta{
     width: 100px;
     transform: scale(1);
     transition: all .4s;
+    align-self: center;
+    position: relative;
 }
 .contact{
     display: none;
@@ -98,7 +94,8 @@ a{
 }
 .beta:hover + .contact{
     display: inline;
-    left: 20px;
+    position: absolute;
+    
 }
 
 .behance{
@@ -126,7 +123,9 @@ header{
     padding: 0;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     max-width: 1000px;
+    font-size: 1.5em;
 }
 
 .delta{
@@ -137,31 +136,17 @@ header{
 }
 
 .tortilla{
-    position: relative;
-    top: 10px;
-    flex-grow: 1;
     display: flex;
     justify-content: flex-end;
     max-height: 65px;
-}
-.beef{
-    display: flex;
-    font-size: 1.6em;
-    align-items: baseline;
-}
-.beef > h2 > a{
-    padding: 1px 50px 1px 50px;
-}
-.connect{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 30px;
+    align-self: center;
 }
 .omega{
     transform: scale(1);
     transition: all .4s;
-    width: 50px;
+    width: 60px;
+    margin-left: 30px;
+    align-self: center;
 }
 .omega:hover{
     transition: all .4s;
