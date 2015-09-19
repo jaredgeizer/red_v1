@@ -7,7 +7,6 @@ body{
     color: #fff;
     
 }
-
 .wrapper{
     width: 60%;
     height: 500px;
@@ -24,7 +23,8 @@ body{
     max-width: 180px;
     left: 50%;
     margin-left: -15%;
-    animation: the-fade 2s infinite;
+    animation: the-fade 3s 1;
+    transform: scale(0)
 }
 .logo{ 
     position: absolute;
@@ -33,34 +33,36 @@ body{
     justify-content: center;
 }
 /* figure out a way to have the animation load upon the page loading/ set time after page loads, javascript*/
-
+ 
 .hex-R{
     position: absolute;
-    animation: the-foreward 2s infinite;
+    animation: the-foreward 3s 1;
+    transform: translateX(-200px)
 }
 .hex-E{
     position: absolute;
 }
 .hex-D{
-    animation: the-reverse 2s infinite;
+    animation: the-reverse 3s 1;
+    transform: translateX(200px)
 }
 
 @keyframes the-foreward {
     0%{transform: translateX(0)}
+    20%{transform: translateX(0)}
     100%{transform: translateX(-200px)}
 }
 @keyframes the-reverse {
     0%{transform: translateX(0)}
+    20%{transform: translateX(0)}
     100%{transform: translateX(200px)}
 }
 @keyframes the-fade {
     0%{transform: scale(1) translateY(0);}
-    50%{transform: scale(0) translateY(-150px);}
-    100%{transform: scale(0)translateY(20px);}
+    20%{transform: scale(1) translateY(0);}
+    40%{transform: scale(0) translateY(-100px);}
+    100%{transform: scale(0)translateY(-100px);}
 }
-
-
-
 
 
 
@@ -118,11 +120,11 @@ a{
     transition: all .4s;
     align-self: center;
     position: relative;
+    z-index: 10;
 }
 .contact{
     display: none;
-    position: relative;
-    
+    position: absolute;
 }
 .beta:hover{
     transition: all .4s;
@@ -131,21 +133,70 @@ a{
 }
 .beta:hover + .contact{
     display: inline;
-    position: absolute;
-    
+    position: relative;
+    left: -100px;
+}
+.contact:hover{
+    display: inline;
+    position: relative;
+    left: -100px;
+}
+
+.beta:hover + .contact .behance{
+    animation: the-upward 1s 1;
+}
+.beta:hover + .contact .linkedin{
+    animation: the-sideways 1s 1;
+}
+.beta:hover + .contact .mail{
+    animation: the-downward 1s 1;
+}
+
+.contact:hover .behance{
+    transform: translateX(50px);
+    top: -85px;
+}
+.contact:hover .linkedin{
+    transform: translateX(100px);
+}
+.contact:hover .mail{
+    transform: translateX(50px);
+    top: 85px;
 }
 
 .behance{
-    top: -99px;
+    position: absolute;  
+    transform: translateX(50px);
+    z-index: 5;
+    top: -85px;
 }
 .linkedin{
-    top: -195px;
+    position: absolute; 
+    transform: translateX(100px);
+    z-index: 5;
 }
 .mail{
-    
+    position: absolute;
+    top: 85px; 
+    transform: translateX(50px);
+    z-index: 5;
 }
 
-
+@keyframes the-upward {
+    0%{top: 0; transform: translateX(0)}
+    5%{ top: 0;transform: translateX(0)}
+    100%{ top: 0;transform: translateY(-85px) translateX(50px);}
+}
+@keyframes the-sideways {
+    0%{transform: translateX(0)}
+    5%{transform: translateX(0)}
+    100%{transform: translateX(100px);}
+}
+@keyframes the-downward {
+    0%{top: 0; transform: translateX(0)}
+    5%{top: 0; transform: translateX(0)}
+    100%{top: 0; transform: translateY(85px) translateX(50px);}
+}
 
 
 
@@ -166,11 +217,52 @@ header{
 }
 
 .delta{
-    position: relative;
-    width: 15%;
+    position: absolute;
     height: inherit;
     max-width: 90px;
+    animation: the-disappear 3s 1;
+    transform: scale(0)
 }
+.mini-logo{
+    width: 290px;
+}
+.lil-R{
+    height: 100px;
+    position: absolute;
+    width: 93px;
+}
+.lil-E{
+    height: 100px;
+    position: absolute;
+    animation: the-extend 3s 1;
+    width: 93px;
+    transform: translateX(100px)
+}
+.lil-D{
+    height: 100px;
+    position: absolute;
+    animation: the-double-extend 3s 1;
+    width: 93px;
+    transform: translateX(200px)
+}
+
+@keyframes the-extend {
+    0%{transform: translateX(0)}
+    15%{transform: translateX(0)}
+    100%{transform: translateX(100px)}
+}
+@keyframes the-double-extend {
+    0%{transform: translateX(0)}
+    15%{transform: translateX(0)}
+    100%{transform: translateX(200px)}
+}
+@keyframes the-disappear {
+    0%{transform: scale(1) translateY(0);}
+    15%{transform: scale(1) translateY(0);}
+    100%{transform: scale(0)translateY(-20px);}
+}
+
+
 
 .tortilla{
     display: flex;
@@ -178,30 +270,152 @@ header{
     max-height: 65px;
     align-self: center;
 }
+
 .omega{
     transform: scale(1);
     transition: all .4s;
     width: 60px;
     margin-left: 30px;
     align-self: center;
+    z-index: 10;
+}
+.contact2{
+     display: none;
+    position: absolute;
 }
 .omega:hover{
     transition: all .4s;
     transform: scale(1.06);
     z-index: 11;   
 }
+.omega:hover + .contact2{
+    display: inline;
+    position: relative;
+    top: -15px;
+    left: -90px;
+
+}
+.contact2:hover{
+    display: inline;
+    position: relative;
+    top: -15px;
+    left: -90px;
+}
+
+.omega:hover + .contact2 .behance2{
+    animation: the-ups 1s 1;
+}
+.omega:hover + .contact2 .linkedin2{
+    animation: the-sides 1s 1;
+}
+.omega:hover + .contact2 .mail2{
+    animation: the-downs 1s 1;
+}
+
+.contact:hover .behance2{
+    
+}
+.contact:hover .linkedin2{
+    transform: translateX(-35px);
+    top: 60px;
+}
+.contact:hover .mail2{
+    top: 120px;
+}
+
+.behance2{
+    position: absolute;  
+    transform: translateX(35px);
+    top: 60px; 
+    z-index: 5;
+}
+.linkedin2{
+    position: absolute; 
+    transform: translateX(-35px);
+    top: 60px; 
+    z-index: 5;
+}
+.mail2{
+    position: absolute;
+    top: 120px;
+    z-index: 5;
+}
+/*for some reason whenever behance/ linkedin are hovered over, they become centered*/
+@keyframes the-ups {
+    0%{top: 0; transform: translateX(0)}
+    5%{ top: 0;transform: translateX(0)}
+    100%{ top: 0;transform: translateY(60px) translateX(35px);}
+}
+@keyframes the-sides {
+    0%{top: 0; transform: translateX(0)}
+    5%{top: 0; transform: translateX(0)}
+    100%{transform: transklateY(60px) translateX(-35px);}
+}
+@keyframes the-downs {
+    0%{top: 0; transform: translateX(0)}
+    5%{top: 0; transform: translateX(0)}
+    100%{top: 0; transform: translateY(120px) translateX(0);}
+}
 
 
 
 
+main{
+    position: absolute;
+    overflow: hidden;
+    background: #D53531;
+    width: 100vw;
+    height: 100vh;
+    z-index: -10;
+}
+
+.pinto{
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    margin-left: -465px;
+    z-index: 5;
+}
+.fava{
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    margin-left: 15px;
+    z-index: 5;
+}
+.kidney{
+    position: absolute;
+    left: 50%;
+    margin-left: -225px;
+    height: 500px;
+    top: 550px;
+    z-index: 5;
+}
+
+.clip-polygon {
+	width: 450px;
+	height: 500px;
+    background-color: aqua;
+	-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
 
 
-
-
-
-
-
-
+/* trying to figure out how to get a hover/click on a 'bean' and have it move '.everything' trying javascript*/
+#everything{
+    position: absolute;
+    width: 300vw;
+    height: 300vw;
+    left: -100vw;
+    top: -100vh;
+    z-index: 3;
+}
+.pinto:hover{
+    background-color: aqua;
+}
+.pinto:hover + #everything{
+    background-color: aqua;
+}
 
 
 
