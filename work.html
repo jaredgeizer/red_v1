@@ -7,6 +7,7 @@
         <!--<link rel="stylesheet" href="css/boilerplate.css">-->
         <link rel="stylesheet" href="css/paddycake.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" ></script>
     </head>
     <body> 
         
@@ -246,11 +247,10 @@
             </div>
             
             
-            <div class="tortilla">
+            <div class="wrapper2">
                 
-                    <a href="work.html" class="lettuce"> <h2>work</h2></a>
-                    <div class="space"></div>
-                    <a href="self.html.html" class="lettuce"> <h2>self</h2></a>
+                    <a href="work.html" class="menu-button"><h2>work</h2></a>
+                    <a href="self.html" class="menu-button"><h2>self</h2></a>
                 
                     <svg class='omega' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="83.166px" height="96.022px" viewBox="0 0 83.166 96.022" style="enable-background:new 0 0 83.166 96.022;" xml:space="preserve">
 <g id="Layer_1">
@@ -537,15 +537,45 @@
         
         
         <main>
-            
-            <div class="pinto"><img src="http://lorempixel.com/400/200" class='clip-polygon'></div>
-            
-            
-            <div class="group fava"><img src="http://lorempixel.com/400/200" class='clip-polygon'></div>
-            
-            <div class="group kidney"><img src="http://lorempixel.com/400/200" class='clip-polygon'></div>
-            <div class="everything">
+            <div id="categories">
+                <a href='#web' class="web category"><img src="http://lorempixel.com/400/200" class='clip-polygon'></a>
+                <a href='#print' class="print category"><img class='clip-polygon' src='/img/orca_copy.jpg'></a>
+                
+                <a href='#process' class="process category"><img src="http://lorempixel.com/400/200" class='clip-polygon'></a>
+                
             </div>
+            <div id='web'></div>
+            <object class="row2 column1">
+                <img src="http://lorempixel.com/180/200" class='project'>
+            </object>
+            <object class="row2 column2">
+                <img src="http://lorempixel.com/180/200" class='project'>
+            </object>
+            <object class="row1 column3">
+                <img src="http://lorempixel.com/180/200" class='project'>
+            </object>
+            
+            <div id='print'></div>
+            <object class="row1 column4">
+                <img src="http://lorempixel.com/180/200" class='project'>
+            </object>
+            <object class="row4 column5">
+                <img src="http://lorempixel.com/180/200" class='project'>
+            </object>
+            <object class="row1 column6">
+                <img src="http://lorempixel.com/180/200" class='project'>
+            </object>
+            <object class="row3 column7">
+                <img src="http://lorempixel.com/180/200" class='project'>
+            </object>
+            <object class="row2 column8">
+                <img src="http://lorempixel.com/180/200" class='project'>
+            </object>
+            <object class="row2 column9">
+                <img src="http://lorempixel.com/180/200" class='project'>
+            </object>
+            
+            <div id='process'></div>
             
             
 
@@ -554,7 +584,20 @@
         
         
         
+        <script>
+            $( document ).ready(function() {
+	 	 window.scroll($("#categories").offset().left, $("#categories").offset().top);
         
+        
+        
+        
+        
+        
+        
+        
+        
+         });
+	   </script>
         
         
     

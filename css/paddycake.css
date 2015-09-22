@@ -2,10 +2,11 @@ html{}
 
 body{
     margin: 0;
-    background-color: #F54238;
+    background-color: #D53531;
     font-family: 'Geosans Light',sans-serif;
     color: #fff;
-    
+    /*turn off overflow to debug the works page
+    overflow: hidden;*/
 }
 .wrapper{
     width: 60%;
@@ -32,7 +33,6 @@ body{
     width: 100%;
     justify-content: center;
 }
-/* figure out a way to have the animation load upon the page loading/ set time after page loads, javascript*/
  
 .hex-R{
     position: absolute;
@@ -66,14 +66,13 @@ body{
 
 
 
-
-.burrito{
+.wrapper3{
     position: relative;
     display: flex;
     top: 300px;
     max-height: 100px;
 }
-.chicken{
+.container{
     display: flex;
     width: 60vw;
     justify-content: space-between;
@@ -81,7 +80,7 @@ body{
     font-size: 3em;
     margin-right: 40px;
 }
-.lettuce{
+.menu-button{
     border-width: 10px;
     margin: 0;
     border-style: solid;
@@ -90,19 +89,13 @@ body{
     transform: scale(1);
     transition: all .4s;
     flex-grow: 1;
-    min-width: 160px;
-    
+    max-width: 280px;
+    min-width: 130px;
 }
-.lettuce:hover{
-    background-color:  #D53531; 
+.menu-button:hover{ 
     transition: all .4s;
-    transform: scale(1.03);
+    transform: scale(1.04);
     z-index: 11;
-}
-.space{
-    flex-grow: 1;
-    min-width: 40px;
-    max-width: 100px;
 }
 h2{
     margin: 0;
@@ -143,13 +136,13 @@ a{
 }
 
 .beta:hover + .contact .behance{
-    animation: the-upward 1s 1;
+    animation: behance-extend 1s 1;
 }
 .beta:hover + .contact .linkedin{
-    animation: the-sideways 1s 1;
+    animation: linkedin-extend 1s 1;
 }
 .beta:hover + .contact .mail{
-    animation: the-downward 1s 1;
+    animation: mail-extend 1s 1;
 }
 
 .contact:hover .behance{
@@ -182,17 +175,17 @@ a{
     z-index: 5;
 }
 
-@keyframes the-upward {
+@keyframes behance-extend {
     0%{top: 0; transform: translateX(0)}
     5%{ top: 0;transform: translateX(0)}
     100%{ top: 0;transform: translateY(-85px) translateX(50px);}
 }
-@keyframes the-sideways {
+@keyframes linkedin-extend {
     0%{transform: translateX(0)}
     5%{transform: translateX(0)}
     100%{transform: translateX(100px);}
 }
-@keyframes the-downward {
+@keyframes mail-extend {
     0%{top: 0; transform: translateX(0)}
     5%{top: 0; transform: translateX(0)}
     100%{top: 0; transform: translateY(85px) translateX(50px);}
@@ -203,7 +196,7 @@ a{
 header{
     width: 70vw;
     height: 100px;
-    position: absolute;
+    position: fixed;
     left: 50%;
     margin: 0 auto;
     margin-left: -35vw;
@@ -228,33 +221,31 @@ header{
 }
 .lil-R{
     height: 100px;
-    position: absolute;
     width: 93px;
 }
 .lil-E{
     height: 100px;
-    position: absolute;
     animation: the-extend 3s 1;
     width: 93px;
-    transform: translateX(100px)
+    transform: translateX(0px)
 }
 .lil-D{
     height: 100px;
-    position: absolute;
     animation: the-double-extend 3s 1;
     width: 93px;
-    transform: translateX(200px)
+    transform: translateX(10px);
+    position: absolute
 }
 
 @keyframes the-extend {
-    0%{transform: translateX(0)}
-    15%{transform: translateX(0)}
-    100%{transform: translateX(100px)}
+    0%{transform: translateX(-100px)}
+    15%{transform: translateX(-100px)}
+    100%{transform: translateX(0)}
 }
 @keyframes the-double-extend {
-    0%{transform: translateX(0)}
-    15%{transform: translateX(0)}
-    100%{transform: translateX(200px)}
+    0%{transform: translateX(-200px)}
+    15%{transform: translateX(-200px)}
+    100%{transform: translateX(10px)}
 }
 @keyframes the-disappear {
     0%{transform: scale(1) translateY(0);}
@@ -263,8 +254,7 @@ header{
 }
 
 
-
-.tortilla{
+.wrapper2{
     display: flex;
     justify-content: flex-end;
     max-height: 65px;
@@ -303,23 +293,24 @@ header{
 }
 
 .omega:hover + .contact2 .behance2{
-    animation: the-ups 1s 1;
+    animation: lil-behance-extend 1s 1;
 }
 .omega:hover + .contact2 .linkedin2{
-    animation: the-sides 1s 1;
+    animation: lil-linkedin-extend 1s 1;
 }
 .omega:hover + .contact2 .mail2{
-    animation: the-downs 1s 1;
+    animation: lil-mail-extend 1s 1;
 }
 
-.contact:hover .behance2{
-    
+.contact2:hover .behance2{
+    transform: translateX(35px);
+    top: 60px;
 }
-.contact:hover .linkedin2{
+.contact2:hover .linkedin2{
     transform: translateX(-35px);
     top: 60px;
 }
-.contact:hover .mail2{
+.contact2:hover .mail2{
     top: 120px;
 }
 
@@ -340,18 +331,18 @@ header{
     top: 120px;
     z-index: 5;
 }
-/*for some reason whenever behance/ linkedin are hovered over, they become centered*/
-@keyframes the-ups {
+
+@keyframes lil-behance-extend {
     0%{top: 0; transform: translateX(0)}
     5%{ top: 0;transform: translateX(0)}
     100%{ top: 0;transform: translateY(60px) translateX(35px);}
 }
-@keyframes the-sides {
+@keyframes lil-linkedin-extend {
     0%{top: 0; transform: translateX(0)}
     5%{top: 0; transform: translateX(0)}
     100%{transform: transklateY(60px) translateX(-35px);}
 }
-@keyframes the-downs {
+@keyframes lil-mail-extend {
     0%{top: 0; transform: translateX(0)}
     5%{top: 0; transform: translateX(0)}
     100%{top: 0; transform: translateY(120px) translateX(0);}
@@ -364,26 +355,33 @@ main{
     position: absolute;
     overflow: hidden;
     background: #D53531;
-    width: 100vw;
-    height: 100vh;
+    width: 190vw;
+    height: 2100px;
     z-index: -10;
 }
-
-.pinto{
+#categories{
+    position: absolute;
+    top: 400px;
+    height: 1100px;
+    width: 100vw;
+    left: 50%;
+    margin-left: -25%;
+}
+.web{
     position: absolute;
     top: 150px;
     left: 50%;
     margin-left: -465px;
     z-index: 5;
 }
-.fava{
+.print{
     position: absolute;
     top: 150px;
     left: 50%;
     margin-left: 15px;
     z-index: 5;
 }
-.kidney{
+.process{
     position: absolute;
     left: 50%;
     margin-left: -225px;
@@ -391,35 +389,99 @@ main{
     top: 550px;
     z-index: 5;
 }
+/* apply a onClick javascript command to the categories that reveals/ animates the objects in the respective category*/
+#web{
+    width: 100vw;
+    height: 900px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+}
+#print{
+    width: 100vw;
+    height: 900px;
+    position: relative;
+    right: 0;
+    top: 0;
+}
+#process{
+    height: 100px;
+    
+    position:absolute;
+    top: 1500px;
+    width: 100vw;
+    left: 50%;
+    margin-left: -25%;
+}
 
 .clip-polygon {
 	width: 450px;
 	height: 500px;
-    background-color: aqua;
+    background-color: #F54238;
 	-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 
+/* need javascript to make a smooth transition to the categories*/
 
-/* trying to figure out how to get a hover/click on a 'bean' and have it move '.everything' trying javascript*/
-#everything{
-    position: absolute;
-    width: 300vw;
-    height: 300vw;
-    left: -100vw;
-    top: -100vh;
-    z-index: 3;
+.category{
+    transform: scale(1);
+    transition: all .4s;
 }
-.pinto:hover{
-    background-color: aqua;
+/*whenever a category is hovered over an overlay comes over it and displays the same of the category*/
+.category:hover{
+    transition: all .4s;
+    transform: scale(1.06);
+    z-index: 11;
 }
-.pinto:hover + #everything{
-    background-color: aqua;
+object{
+    transform: scale(1);
+    transition: all .4s;
+    position: relative;
+    width: 180px;
+    height: 200px;
+    background-color: #F54238;
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    z-index: 20;
+}
+object:hover{
+    transition: all .4s;
+    transform: scale(1.06);
+    z-index: 11;
+}
+
+/*need to make the colums/rows responsive somehow*/
+/*.row1{top: 280px;}
+.row2{top: 450px;}
+.row3{top: 620px;}
+.row4{top: 110px;}
+.row5{top: 620px;}
+
+.column1{right: 0;}
+.column2{right: 0;}
+.column3{right: 0;}
+
+.column4{left: 0;}
+.column5{left: 710px;}
+.column6{left: 610px;}
+.column7{left: 610px;}
+.column8{left: 510px;}
+.column9{left: 310px;}*/
+
+project{
+    width: 180px;
+    height: 200px;
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 
 
 
 
+
+
+/*figure out where this site breaks after fixing the responsive columns and rows.*/
 @media screen and (min-width: 1400px) {
 
     header{
