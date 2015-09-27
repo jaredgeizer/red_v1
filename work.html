@@ -250,6 +250,7 @@
             <div class="wrapper2">
                 
                     <a href="work.html" class="menu-button"><h2>work</h2></a>
+                    
                     <a href="self.html" class="menu-button"><h2>self</h2></a>
                 
                     <svg class='omega' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="83.166px" height="96.022px" viewBox="0 0 83.166 96.022" style="enable-background:new 0 0 83.166 96.022;" xml:space="preserve">
@@ -540,40 +541,42 @@
             <div id="categories">
                 <a href='#web' class="web category"><img src="http://lorempixel.com/400/200" class='clip-polygon'></a>
                 <a href='#print' class="print category"><img class='clip-polygon' src='/img/orca_copy.jpg'></a>
-                
                 <a href='#process' class="process category"><img src="http://lorempixel.com/400/200" class='clip-polygon'></a>
                 
             </div>
-            <div id='web'></div>
-            <object class="row2 column1">
-                <img src="http://lorempixel.com/180/200" class='project'>
-            </object>
-            <object class="row2 column2">
-                <img src="http://lorempixel.com/180/200" class='project'>
-            </object>
-            <object class="row1 column3">
-                <img src="http://lorempixel.com/180/200" class='project'>
-            </object>
-            
-            <div id='print'></div>
-            <object class="row1 column4">
-                <img src="http://lorempixel.com/180/200" class='project'>
-            </object>
-            <object class="row4 column5">
-                <img src="http://lorempixel.com/180/200" class='project'>
-            </object>
-            <object class="row1 column6">
-                <img src="http://lorempixel.com/180/200" class='project'>
-            </object>
-            <object class="row3 column7">
-                <img src="http://lorempixel.com/180/200" class='project'>
-            </object>
-            <object class="row2 column8">
-                <img src="http://lorempixel.com/180/200" class='project'>
-            </object>
-            <object class="row2 column9">
-                <img src="http://lorempixel.com/180/200" class='project'>
-            </object>
+            <div id="web"></div>
+            <div id="print"></div>
+                <div class='web-container hidden'>
+                    <object class="row2 column1">
+                        <img src="http://lorempixel.com/180/200" class='project'>
+                    </object>
+                    <object class="row2 column2">
+                        <img src="http://lorempixel.com/180/200" class='project'>
+                    </object>
+                    <object class="row1 column3">
+                        <img src="http://lorempixel.com/180/200" class='project'>
+                    </object>
+                </div>
+                <div class='print-container hidden'>
+                    <object class="row1 column4">
+                    <img src="http://lorempixel.com/180/200" class='project'>
+                </object>
+                    <object class="row2 column5">
+                    <img src="http://lorempixel.com/180/200" class='project'>
+                </object>
+                    <object class="row5 column5">
+                    <img src="http://lorempixel.com/180/200" class='project'>
+                </object>
+                    <object class="row5 column7">
+                    <img src="http://lorempixel.com/180/200" class='project'>
+                </object>
+                    <object class="row3 column6">
+                    <img src="http://lorempixel.com/180/200" class='project'>
+                </object>
+                    <object class="row2 column9">
+                    <img src="http://lorempixel.com/180/200" class='project'>
+</object>
+                </div>
             
             <div id='process'></div>
             
@@ -587,16 +590,25 @@
         <script>
             $( document ).ready(function() {
 	 	 window.scroll($("#categories").offset().left, $("#categories").offset().top);
+            });
+        
+        $(document).on('click', '.web', function(){
+            $(this).siblings().addClass('non-selected');
+            $('.web-container').addClass('show');
+            
+        });
+            $(document).on('click', '.print', function(){
+            $(this).siblings().addClass('non-selected');
+            $('.print-container').removeClass('hidden');
+            $('.print-container > object').addClass('show');
+            
+        });
         
         
         
         
         
         
-        
-        
-        
-         });
 	   </script>
         
         

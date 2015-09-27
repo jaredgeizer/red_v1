@@ -5,8 +5,8 @@ body{
     background-color: #D53531;
     font-family: 'Geosans Light',sans-serif;
     color: #fff;
-    /*turn off overflow to debug the works page
-    overflow: hidden;*/
+    /*turn off overflow to debug the works page*/
+    overflow: hidden;
 }
 .wrapper{
     width: 60%;
@@ -91,6 +91,7 @@ body{
     flex-grow: 1;
     max-width: 280px;
     min-width: 130px;
+    
 }
 .menu-button:hover{ 
     transition: all .4s;
@@ -213,28 +214,35 @@ header{
     position: absolute;
     height: inherit;
     max-width: 90px;
-    animation: the-disappear 3s 1;
-    transform: scale(0)
+    z-index: 20;
+    transform: scale(0);
+    animation: the-disappear 2s 1;
 }
+
 .mini-logo{
     width: 290px;
+    z-index: 1;
 }
+
 .lil-R{
     height: 100px;
     width: 93px;
+    z-index: 1;
 }
 .lil-E{
     height: 100px;
-    animation: the-extend 3s 1;
     width: 93px;
-    transform: translateX(0px)
+    z-index: 1;
+    transform: translateX(0);
+    animation: the-extend 2s 1;
 }
 .lil-D{
     height: 100px;
-    animation: the-double-extend 3s 1;
     width: 93px;
     transform: translateX(10px);
-    position: absolute
+    position: absolute;
+    z-index: 1;
+    animation: the-double-extend 2s;
 }
 
 @keyframes the-extend {
@@ -243,8 +251,8 @@ header{
     100%{transform: translateX(0)}
 }
 @keyframes the-double-extend {
-    0%{transform: translateX(-200px)}
-    15%{transform: translateX(-200px)}
+    0%{transform: translateX(-195px)}
+    15%{transform: translateX(-195px)}
     100%{transform: translateX(10px)}
 }
 @keyframes the-disappear {
@@ -265,7 +273,7 @@ header{
     transform: scale(1);
     transition: all .4s;
     width: 60px;
-    margin-left: 30px;
+    margin-left: 25px;
     align-self: center;
     z-index: 10;
 }
@@ -355,15 +363,16 @@ main{
     position: absolute;
     overflow: hidden;
     background: #D53531;
-    width: 190vw;
-    height: 2100px;
+    width: 200vw;
+    height: 1600px;
     z-index: -10;
+    max-width: 2600px;/*prevents the page from becoming too wide, however it does break the categories centering as larger window sizes*/
 }
 #categories{
     position: absolute;
-    top: 400px;
+    top: 300px;
     height: 1100px;
-    width: 100vw;
+    width: 50%;
     left: 50%;
     margin-left: -25%;
 }
@@ -389,20 +398,38 @@ main{
     top: 550px;
     z-index: 5;
 }
-/* apply a onClick javascript command to the categories that reveals/ animates the objects in the respective category*/
+
+
 #web{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 10%;
+    top: 100px;
+}
+#print{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: 10%;
+    top: 75px;
+}
+.web-container{
     width: 100vw;
+    height: 900px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    max-width: 1300px;
+    transform: scale(1);
+}
+.print-container{
+    width: 95vw;
     height: 900px;
     position: absolute;
     left: 50%;
     top: 0;
-}
-#print{
-    width: 100vw;
-    height: 900px;
-    position: relative;
-    right: 0;
-    top: 0;
+    transform: scale(1);
 }
 #process{
     height: 100px;
@@ -431,13 +458,24 @@ clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 /*whenever a category is hovered over an overlay comes over it and displays the same of the category*/
 .category:hover{
     transition: all .4s;
-    transform: scale(1.06);
-    z-index: 11;
+    transform: scale(1.1);
+    z-index: 30;
 }
+.hidden{
+    display: none;
+}
+.show{
+   display: inline;
+    animation: pop-up .6s 1;
+}
+.non-selected{
+
+}
+
 object{
     transform: scale(1);
     transition: all .4s;
-    position: relative;
+    position: absolute;
     width: 180px;
     height: 200px;
     background-color: #F54238;
@@ -447,27 +485,26 @@ clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 object:hover{
     transition: all .4s;
-    transform: scale(1.06);
+    transform: scale(1.2);
     z-index: 11;
 }
 
-/*need to make the colums/rows responsive somehow*/
-/*.row1{top: 280px;}
-.row2{top: 450px;}
-.row3{top: 620px;}
-.row4{top: 110px;}
-.row5{top: 620px;}
+.row1{top: 524px;}
+.row2{top: 350px;}
+.row3{top: 180px;}
+.row4{top: 80px;}
+.row5{top: 690px;}
 
-.column1{right: 0;}
-.column2{right: 0;}
-.column3{right: 0;}
-
-.column4{left: 0;}
-.column5{left: 710px;}
-.column6{left: 610px;}
-.column7{left: 610px;}
-.column8{left: 510px;}
-.column9{left: 310px;}*/
+.column1{right: 590px;}
+.column2{right: 390px;}
+.column3{right: 490px;}
+/*figure out a way to control the animation delay from the column to make them pop up at different times*/
+.column4{left: 485px;}
+.column5{left: 590px;}
+.column6{left: 690px;}
+.column7{left: 790px;}
+.column8{left: 930px;}
+.column9{left: 380px;}
 
 project{
     width: 180px;
@@ -476,7 +513,11 @@ project{
 clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 
-
+@keyframes pop-up {
+    0%{ transform: scale(0)}
+    80%{ transform: scale(1.1)}
+    100%{ transform: scale(1);}
+}
 
 
 
