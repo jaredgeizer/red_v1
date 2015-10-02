@@ -1,85 +1,107 @@
 html{}
+*{
+  box-sizing: border-box;
+}
 
 body{
     margin: 0;
     background-color: #D53531;
-    font-family: 'Geosans Light',sans-serif;
+    font-family: 'Oxygen',sans-serif;
     color: #fff;
-    /*turn off overflow to debug the works page*/
-    overflow: hidden;
+    /*turn off overflow to debug the works page
+    overflow: hidden;*/
 }
 .wrapper{
-    width: 60%;
-    height: 500px;
-    position: relative;
+    width: 70%;
+    display: block;
     margin: 0 auto;
-    top: 240px;
-    max-width: 680px;
-    display: flex;
+    margin-top: 240px;
+    max-width: 800px;
 }
 
 .alpha{
-    position: absolute;
-    width: 30%;
-    max-width: 180px;
-    left: 50%;
-    margin-left: -15%;
-    animation: the-fade 3s 1;
-    transform: scale(0)
+    display: block;
+    margin: 0 auto;
+    animation: alpha-shrink 6s 1;
+    -webkit-animation: alpha-shrink 6s 1;
+    width: 0;
 }
 .logo{ 
-    position: absolute;
     display: flex;
-    width: 100%;
+    display: -webkit-flex;/*can i use says that i dont need webkit, but it seems like i do why?*/
     justify-content: center;
+    width: 100%;
+    max-width: 578px;
+    margin: 0 auto;
+    margin-top: -200px;
 }
- 
+.logo svg + svg{
+    margin-left: 10px;
+}
+.logo svg{
+    width: 100%;
+    max-width: 175px;
+}
 .hex-R{
-    position: absolute;
-    animation: the-foreward 3s 1;
-    transform: translateX(-200px)
+    position: relative;
+    animation: R-extend 6s 1;
+    -webkit-animation: R-extend 6s 1;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
 }
-.hex-E{
-    position: absolute;
-}
+.hex-E{}
 .hex-D{
-    animation: the-reverse 3s 1;
-    transform: translateX(200px)
+    position: relative;
+    animation: D-extend 6s 1;
+    -webkit-animation: D-extend 6s 1;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
 }
 
-@keyframes the-foreward {
-    0%{transform: translateX(0)}
-    20%{transform: translateX(0)}
-    100%{transform: translateX(-200px)}
+@keyframes R-extend {
+    0%, 25%{transform: translateX(107%);}
+    50%, 100%{transform: translateX(0);}
 }
-@keyframes the-reverse {
-    0%{transform: translateX(0)}
-    20%{transform: translateX(0)}
-    100%{transform: translateX(200px)}
+@keyframes D-extend {
+    0%, 25%{transform: translateX(-107%);}
+    50%, 100%{transform: translateX(0);}
 }
-@keyframes the-fade {
-    0%{transform: scale(1) translateY(0);}
-    20%{transform: scale(1) translateY(0);}
-    40%{transform: scale(0) translateY(-100px);}
-    100%{transform: scale(0)translateY(-100px);}
+@keyframes alpha-shrink {
+    0%, 25%{width: 100%; transform: translateY(0);}
+    35%, 100%{width: 0;transform: translateY(-4%);}
+}
+@-webkit-keyframes R-extend {
+    0%, 25%{-webkit-transform: translateX(107%);}
+    50%, 100%{-webkit-transform: translateX(0);}
+}
+@-webkit-keyframes D-extend {
+    0%, 25%{-webkit-transform: translateX(-107%);}
+    50%, 100%{-webkit-transform: translateX(0);}
+}
+@-webkit-keyframes alpha-shrink {
+    0%, 25%{width: 100%; -webkit-transform: translateY(0);}
+    35%, 100%{width: 0; -webkit-transform: translateY(-4%);}
 }
 
 
-
-.wrapper3{
+nav{
     position: relative;
     display: flex;
-    top: 300px;
+    display: -webkit-flex;
+    margin-top: 150px;
     max-height: 100px;
 }
 .container{
+    margin: 0 auto;
     display: flex;
-    width: 60vw;
+    display: -webkit-flex;
+    width: 100%;
     justify-content: space-between;
-    max-width: 680px;
+    -webkit-justify-content: space-between;
+    max-width: 600px;
     font-size: 3em;
-    margin-right: 40px;
 }
+
 .menu-button{
     border-width: 10px;
     margin: 0;
@@ -87,8 +109,10 @@ body{
     text-align: center;
     font-weight: normal;
     transform: scale(1);
+    -webkit-transform: scale(1);
     transition: all .4s;
     flex-grow: 1;
+    -webkit-flex-grow: 1;
     max-width: 280px;
     min-width: 130px;
     
@@ -96,6 +120,7 @@ body{
 .menu-button:hover{ 
     transition: all .4s;
     transform: scale(1.04);
+    -webkit-transform: scale(1.04);
     z-index: 11;
 }
 h2{
@@ -111,10 +136,13 @@ a{
 .beta{
     width: 100px;
     transform: scale(1);
+    -webkit-transform: scale(1);
     transition: all .4s;
     align-self: center;
-    position: relative;
+    position: absolute;
     z-index: 10;
+    margin-left: -50px
+    
 }
 .contact{
     display: none;
@@ -123,74 +151,91 @@ a{
 .beta:hover{
     transition: all .4s;
     transform: scale(1.06);
+    -webkit-transform: scale(1.06);
     z-index: 11;
 }
 .beta:hover + .contact{
     display: inline;
     position: relative;
-    left: -100px;
 }
 .contact:hover{
     display: inline;
-    position: relative;
-    left: -100px;
 }
 
 .beta:hover + .contact .behance{
     animation: behance-extend 1s 1;
+    -webkit-animation: behance-extend 1s 1;
 }
 .beta:hover + .contact .linkedin{
     animation: linkedin-extend 1s 1;
+    -webkit-animation: linkedin-extend 1s 1;
 }
 .beta:hover + .contact .mail{
     animation: mail-extend 1s 1;
+    -webkit-animation: mail-extend 1s 1;
 }
 
 .contact:hover .behance{
     transform: translateX(50px);
+    -webkit-transform: translateX(50px);
     top: -85px;
 }
 .contact:hover .linkedin{
     transform: translateX(100px);
+    -webkit-transform: translateX(100px);
 }
 .contact:hover .mail{
     transform: translateX(50px);
+    -webkit-transform: translateX(50px);
     top: 85px;
 }
 
-.behance{
-    position: absolute;  
+.behance{  
+    position: absolute;
     transform: translateX(50px);
+    -webkit-transform: translateX(50px);
     z-index: 5;
     top: -85px;
 }
-.linkedin{
-    position: absolute; 
+.linkedin{ 
+    position: absolute;
     transform: translateX(100px);
+    -webkit-transform: translateX(100px);
     z-index: 5;
 }
 .mail{
     position: absolute;
     top: 85px; 
     transform: translateX(50px);
+    -webkit-transform: translateX(50px);
     z-index: 5;
 }
 
 @keyframes behance-extend {
-    0%{top: 0; transform: translateX(0)}
-    5%{ top: 0;transform: translateX(0)}
-    100%{ top: 0;transform: translateY(-85px) translateX(50px);}
+    0%, 5%{top: 0; transform: translateX(0)}
+    100%{ top: -85px;transform: translateY(0) translateX(50px);}
 }
 @keyframes linkedin-extend {
-    0%{transform: translateX(0)}
-    5%{transform: translateX(0)}
+    0%, 5%{transform: translateX(0)}
     100%{transform: translateX(100px);}
 }
 @keyframes mail-extend {
-    0%{top: 0; transform: translateX(0)}
-    5%{top: 0; transform: translateX(0)}
+    0%, 5%{top: 0; transform: translateX(0)}
     100%{top: 0; transform: translateY(85px) translateX(50px);}
 }
+@-webkit-keyframes behance-extend {
+    0%, 5%{top: 0; -webkit-transform: translateX(0)}
+    100%{ top: -85px; -webkit-transform: translateY(0) translateX(50px);}
+}
+@-webkit-keyframes linkedin-extend {
+    0%, 5%{-webkit-transform: translateX(0)}
+    100%{-webkit-transform: translateX(100px);}
+}
+@-webkit-keyframes mail-extend {
+    0%, 5%{top: 0; -webkit-transform: translateX(0)}
+    100%{top: 0; -webkit-transform: translateY(85px) translateX(50px);}
+}
+
 
 
 
@@ -363,61 +408,72 @@ main{
     position: absolute;
     overflow: hidden;
     background: #D53531;
-    width: 200vw;
-    height: 1600px;
+    width: 300vw;
     z-index: -10;
-    max-width: 2600px;/*prevents the page from becoming too wide, however it does break the categories centering as larger window sizes*/
+    max-width: 2900px;
 }
+
 #categories{
-    position: absolute;
-    top: 300px;
-    height: 1100px;
+    width: 100vw;
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: 150px;
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    justify-content: center;
+    padding: .75%;
+}
+.hexagon{
     width: 50%;
-    left: 50%;
-    margin-left: -25%;
+    padding: 1.5%;
 }
-.web{
-    position: absolute;
-    top: 150px;
-    left: 50%;
-    margin-left: -465px;
-    z-index: 5;
+.hexagon div{
+    padding-bottom: 110%;
+    height: 0;
+    background-color: #ffffff;
+    background-size: cover;
+    background-position: center center;
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
-.print{
-    position: absolute;
-    top: 150px;
-    left: 50%;
-    margin-left: 15px;
-    z-index: 5;
+.hexagon div:hover{
+    transition: all .4s;
+    transform: scale(1.06);
+    -webkit-transform: scale(1.06);
 }
-.process{
-    position: absolute;
-    left: 50%;
-    margin-left: -225px;
-    height: 500px;
-    top: 550px;
-    z-index: 5;
-}
-
-
 #web{
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    left: 10%;
-    top: 100px;
+    background-image: url('http://lorempixel.com/500/200');
 }
 #print{
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    right: 10%;
-    top: 75px;
+    background-image: url('http://lorempixel.com/500/200');
 }
+#process{
+    background-image: url('http://lorempixel.com/500/200');
+}
+.hexagon + .hexagon + .hexagon{
+    margin-top: -13%;
+}
+#viewport{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -50vw;
+    z-index: -20;
+}
+
+
+
+
+
+
+
 .web-container{
     width: 100vw;
     height: 900px;
-    position: absolute;
+    
     left: 0;
     top: 0;
     max-width: 1300px;
@@ -431,45 +487,14 @@ main{
     top: 0;
     transform: scale(1);
 }
-#process{
-    height: 100px;
-    
-    position:absolute;
-    top: 1500px;
-    width: 100vw;
-    left: 50%;
-    margin-left: -25%;
-}
 
-.clip-polygon {
-	width: 450px;
-	height: 500px;
-    background-color: #F54238;
-	-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-}
 
-/* need javascript to make a smooth transition to the categories*/
-
-.category{
-    transform: scale(1);
-    transition: all .4s;
-}
-/*whenever a category is hovered over an overlay comes over it and displays the same of the category*/
-.category:hover{
-    transition: all .4s;
-    transform: scale(1.1);
-    z-index: 30;
-}
 .hidden{
     display: none;
 }
 .show{
    display: inline;
     animation: pop-up .6s 1;
-}
-.non-selected{
-
 }
 
 object{
@@ -489,22 +514,9 @@ object:hover{
     z-index: 11;
 }
 
-.row1{top: 524px;}
-.row2{top: 350px;}
-.row3{top: 180px;}
-.row4{top: 80px;}
-.row5{top: 690px;}
 
-.column1{right: 590px;}
-.column2{right: 390px;}
-.column3{right: 490px;}
 /*figure out a way to control the animation delay from the column to make them pop up at different times*/
-.column4{left: 485px;}
-.column5{left: 590px;}
-.column6{left: 690px;}
-.column7{left: 790px;}
-.column8{left: 930px;}
-.column9{left: 380px;}
+
 
 project{
     width: 180px;
@@ -529,6 +541,14 @@ clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
         margin-left: -500px;
         width: 1000px;
     }
+}
+@media screen and (max-width: 1000px) {
+
+    
+}
+@media screen and (max-width: 990px) {
+
+    
 }
 
 

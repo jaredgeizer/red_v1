@@ -534,18 +534,25 @@
         </header>
         
         
-        
-        
-        
+ 
         <main>
             <div id="categories">
-                <a href='#web' class="web category"><img src="http://lorempixel.com/400/200" class='clip-polygon'></a>
-                <a href='#print' class="print category"><img class='clip-polygon' src='/img/orca_copy.jpg'></a>
-                <a href='#process' class="process category"><img src="http://lorempixel.com/400/200" class='clip-polygon'></a>
-                
+                <div class="hexagon web">
+                    <div id="web"></div>
+                </div>
+                <div class="hexagon print">
+                    <div id="print"></div>
+                </div>
+                <div class="hexagon process">
+                    <div id="process"></div>
+                </div>
             </div>
-            <div id="web"></div>
-            <div id="print"></div>
+            
+            <div id="viewport"></div>
+            
+            
+            
+            
                 <div class='web-container hidden'>
                     <object class="row2 column1">
                         <img src="http://lorempixel.com/180/200" class='project'>
@@ -588,19 +595,22 @@
         
         
         <script>
-            $( document ).ready(function() {
-	 	 window.scroll($("#categories").offset().left, $("#categories").offset().top);
+            $( document ).ready(function(){
+	 	 window.scroll($("#viewport").offset().left, $("#viewport").offset().top);
+            });
+            $(window).resize(function(){
+            window.scroll($("#viewport").offset().left, $("#viewport").offset().top);
             });
         
         $(document).on('click', '.web', function(){
-            $(this).siblings().addClass('non-selected');
+            $('.web-container').removeClass('hidden');
             $('.web-container').addClass('show');
             
         });
-            $(document).on('click', '.print', function(){
-            $(this).siblings().addClass('non-selected');
+        $(document).on('click', '.print', function(){
             $('.print-container').removeClass('hidden');
             $('.print-container > object').addClass('show');
+    
             
         });
         
