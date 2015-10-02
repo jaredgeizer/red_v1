@@ -462,6 +462,8 @@ main{
     left: 50%;
     margin-left: -50vw;
     z-index: -20;
+    background-color: bisque;
+    opacity: .5;
 }
 
 

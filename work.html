@@ -605,12 +605,18 @@
         $(document).on('click', '.web', function(){
             $('.web-container').removeClass('hidden');
             $('.web-container').addClass('show');
+            $('#viewport').css('left',0).css('margin-left',0);
+            window.scroll($("#viewport").offset().left, $("#viewport").offset().top);
             
         });
+            
         $(document).on('click', '.print', function(){
             $('.print-container').removeClass('hidden');
             $('.print-container > object').addClass('show');
-    
+            var windowWidth = $(window).width()
+            console.log(windowWidth)
+            $('#viewport').css('left',windowWidth*2).css('margin-left',0);
+            window.scroll($("#viewport").offset().left, $("#viewport").offset().top);
             
         });
         
